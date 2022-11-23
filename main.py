@@ -6,16 +6,13 @@ from scipy.interpolate import make_interp_spline
 
 matplotlib.use('TkAgg')
 
-#Функция для прорисо
+#Функция для прорисовывания общего графика
 def oneGraph(x, masOneGraph, g, t, axs):
     masColor = ['k', 'k', 'k', 'k', 'k', 'k', 'k', 'tab:red']
-    # masColor=['r', 'g', 'b', 'c', 'm', 'y', 'k', 'tab:pink']
-    print(masOneGraph)
     for i in range(0, len(masOneGraph)):
         X_Y_Spline = make_interp_spline(x, masOneGraph[i])
         X_ = np.linspace(x.min(), x.max(), 500)
         Y_ = X_Y_Spline(X_)
-        # print(f"{g} {t}")
         axs[g, t].plot(X_, Y_, color=masColor[i])
         axs[g, t].set_ylabel('f(t)')
         axs[g, t].set_xlabel("t")
@@ -56,15 +53,12 @@ def masGraph(masK, masFt, axs):
 
             X_ = np.linspace(x.min(), x.max(), 500)
             Y_ = X_Y_Spline(X_)
-            # print(f"{g} {t}")
             axs[g, t].plot(X_O, Y_O, color="w", label = f'n = {Ki}')
             axs[g, t].plot(X_, Y_, label = strfω)
             axs[g, t].set_ylabel(f'f{Ki}(t)')
             axs[g, t].set_xlabel("t")
             axs[g, t].legend()
             Ki += 1
-
-    print(masOneGraph)
 
 
 def F_t(t, fc, k, ftInp):
@@ -91,9 +85,9 @@ def F_t(t, fc, k, ftInp):
     return res
 
 
-# T = int(input("T = "))  # 5
-# Fc = int(input("fc = "))  # 4
-# k = int(input("k = "))  # 6
+T = int(input("T = "))  # 5
+Fc = int(input("fc = "))  # 4
+k = int(input("k = "))  # 6
 T = 5
 Fc = 4
 k = 6
