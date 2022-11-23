@@ -89,6 +89,8 @@ T = int(input("T = "))
 Fc = int(input("fc = "))
 k = int(input("k = "))
 
+#Высоты квантованного отчёта
 ftInp = [0.5, 0.6, 1.2, 2.1, 2.8, 2.3, 1.1]
+
 ft = F_t(T, Fc, k, ftInp)
 print(str(ft))
