@@ -85,12 +85,10 @@ def F_t(t, fc, k, ftInp):
     return res
 
 
-T = int(input("T = "))  # 5
-Fc = int(input("fc = "))  # 4
-k = int(input("k = "))  # 6
-T = 5
-Fc = 4
-k = 6
+T = int(input("T = "))
+Fc = int(input("fc = "))
+k = int(input("k = "))
+
 ftInp = [0.5, 0.6, 1.2, 2.1, 2.8, 2.3, 1.1]
 ft = F_t(T, Fc, k, ftInp)
 print(str(ft))
